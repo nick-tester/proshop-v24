@@ -3,9 +3,9 @@ import React from "react";
 
 const App = () => {
   return (
-    <>
-      <h4> App component  </h4>
-    </>
+    <div>
+      <h1>Welcome To Proshop</h1>
+    </div>
   )
 };
 
