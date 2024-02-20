@@ -7,7 +7,7 @@ import products from "../assets/products";
 const HomeScreen = () => {
     return (
         <>
-            <h1>Latest Product</h1>
+            <h1>Latest Products</h1>
             <Row>
                 {products.map(product => {
                     return (
