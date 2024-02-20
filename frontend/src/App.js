@@ -1,6 +1,6 @@
 import React from "react";
+import { Outlet } from "react-router-dom";
 import { Header, Footer, Main } from "./components";
-import { HomeScreen } from "./screens";
 
 
 const App = () => {
@@ -8,7 +8,7 @@ const App = () => {
     <>
       <Header />
       <Main>
-        <HomeScreen />
+        <Outlet />
       </Main>
       <Footer />
     </>
