@@ -1,6 +1,7 @@
 import express from "express";
 import products from "./data/products.js";
-const PORT = 4000;
+import dotenv from "dotenv";
+dotenv.config();
 
 
 const server = express();
@@ -19,4 +20,5 @@ server.get("/api/v24/products/:id", (req, res) => {
 });
 
 
-server.listen(PORT, () => console.log(`Server is running in development mode on port ${PORT}...`));
+const PORT = process.env.PORT || 4000;
+server.listen(PORT, () => console.log(`Server is running in ${process.env.NODE_ENV} mode on port ${PORT}...`));
