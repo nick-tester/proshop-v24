@@ -6,6 +6,8 @@ dotenv.config();
 
 const server = express();
 
+server.use(express.json());
+
 server.get("/", (req, res) => {
     res.send("Root endpoint running...");
 });
