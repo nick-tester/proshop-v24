@@ -1,8 +1,10 @@
 import express from "express";
-import products from "./data/products.js";
 import dotenv from "dotenv";
 dotenv.config();
+import products from "./data/products.js";
+import connectDB from "./config/db.js";
 
+connectDB();
 
 const server = express();
 
