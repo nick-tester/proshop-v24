@@ -1,5 +1,6 @@
+import React from "react";
 import { Row, Col } from "react-bootstrap";
-import { Product, Loading } from "../components";
+import { Product, Loading, Message } from "../components";
 import { useGetProductsQuery } from "../redux/slices/productApiSlice";
 
 
@@ -8,7 +9,7 @@ const HomeScreen = () => {
 
     return (
         <>
-            {isLoading ? <Loading /> : isError ? <h1>{isError?.data?.message || isError.error}</h1> : (
+            {isLoading ? <Loading /> : isError ? <Message variant="danger">{isError?.data?.message || isError.error}</Message> : (
                 <>
                     <h1>Latest Products</h1>
                     <Row>

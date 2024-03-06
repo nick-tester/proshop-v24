@@ -2,7 +2,7 @@ import React from "react";
 import { useParams, Link } from "react-router-dom";
 import { useGetProductDetailsQuery } from "../redux/slices/productApiSlice";
 import { Row, Col, Image, ListGroup, Card, Button } from "react-bootstrap";
-import { Rating, Loading } from "../components";
+import { Rating, Loading, Message } from "../components";
 
 
 const ProductScreen = () => {
@@ -12,7 +12,7 @@ const ProductScreen = () => {
     return (
         <>
             <Link to="/" className="btn btn-light my-3">Go Back</Link>
-            {isLoading ? <Loading /> : isError ? <h1>Error...</h1> : (
+            {isLoading ? <Loading /> : isError ? <Message variant="danger">{isError?.data?.message || isError.error}</Message> : (
                 <>
                     <Row>
                         <Col md={5}>
