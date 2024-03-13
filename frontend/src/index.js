@@ -13,7 +13,8 @@ import "./assets/styles/bootstrap.custom.css";
 import App from './App';
 import {
   HomeScreen,
-  ProductScreen
+  ProductScreen,
+  CartScreen
 } from './screens';
 
 const router = createBrowserRouter(
@@ -21,6 +22,7 @@ const router = createBrowserRouter(
     <Route path="/" element={<App />}>
       <Route index={true} path="/" element={<HomeScreen />} />
       <Route path="/products/:id" element={<ProductScreen />} />
+      <Route path="/cart" element={<CartScreen />} />
     </Route>
   )
 );
