@@ -16,7 +16,11 @@ const CartScreen = () => {
     const { cartItems } = cart;
 
     const updateCartHandler = (item, qty) => {
-        dispatch(addToCart({ ...item, qty }))
+        dispatch(addToCart({ ...item, qty }));
+    };
+
+    const checkoutHandler = () => {
+        console.log("checkout");
     };
 
     return <Row>
@@ -68,7 +72,7 @@ const CartScreen = () => {
                         £{cartItems.reduce((acc, item) => acc + item.price * item.qty, 0)}
                     </ListGroup.Item>
                     <ListGroup.Item>
-                        <Button type="button" className="btn-block" disabled={cartItems.length === 0}>proceed to checkout</Button>
+                        <Button type="button" className="btn-block" disabled={cartItems.length === 0} onClick={checkoutHandler}>proceed to checkout</Button>
                     </ListGroup.Item>
                 </ListGroup>
             </Card>
