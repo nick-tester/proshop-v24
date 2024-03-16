@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Row, Col, ListGroup, Image, Form, Button, Card } from "react-bootstrap";
 import { FaTrash } from "react-icons/fa";
 import { Message } from "../components";
-import { addToCart } from "../redux/slices/cartSlice";
+import { addToCart, removeFromCart } from "../redux/slices/cartSlice";
 
 
 const CartScreen = () => {
@@ -21,6 +21,10 @@ const CartScreen = () => {
 
     const checkoutHandler = () => {
         console.log("checkout");
+    };
+
+    const removeFromCartHandler = (id) => {
+        dispatch(removeFromCart(id));
     };
 
     return <Row>
@@ -52,7 +56,7 @@ const CartScreen = () => {
                                     </Form.Control>
                                 </Col>
                                 <Col md={2}>
-                                    <Button type="button" variant="light">
+                                    <Button type="button" variant="light" onClick={() => removeFromCartHandler(item._id)}>
                                         <FaTrash style={{ color: "red" }} />
                                     </Button>
                                 </Col>
