@@ -1,6 +1,7 @@
 import express from "express";
 import dotenv from "dotenv";
 dotenv.config();
+import cookieParser from "cookie-parser";
 import connectDB from "./config/db.js";
 import productRoutes from "./routes/productRoutes.js";
 import userRoutes from "./routes/userRoutes.js";
@@ -14,6 +15,8 @@ const server = express();
 server.use(express.json());
 
 server.use(express.urlencoded({ extended: true }));
+
+server.use(cookieParser());
 
 server.get("/", (req, res) => {
     res.send("Root endpoint running...");
